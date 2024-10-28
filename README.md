@@ -131,6 +131,10 @@ Build using colcon (Must be from the workspace directory)
 ```bash
 colcon build
 ```
+or
+```bash
+colcon build --symlink-install
+```
 
 If the build shows error, downgrade python setuptools to 58.2.0
 ```bash
