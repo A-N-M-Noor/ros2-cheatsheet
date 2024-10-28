@@ -48,7 +48,7 @@ sudo apt-install python3-colcon-common-extensions
 ```
 
 ### Add Path to Environment
-Open ` /.bashrc ` by using
+Open ` .bashrc ` by using
 ```bash
 gedit ~/.bashrc
 ```
@@ -93,4 +93,22 @@ ros2 run <pkg> <node>
 ros2 run turtlesim turtlesim_node
 ```
 
-## Creating a ROS2 workspace
+## Creating a ROS2 Package
+### Make the workspace
+Make a new directory, move into the directory, and create a src sub-directory.
+```bash
+mkdir ros2_ws
+cd ros2_ws
+mkdir src
+```
+
+### Build the package
+Build using colcon
+```bash
+colcon build
+```
+
+Add the package to the ` .bashrc ` file
+```bash
+source ~/ros2_ws/install/setup.bash
+```
