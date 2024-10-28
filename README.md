@@ -37,6 +37,16 @@ sudo apt update
 sudo apt upgrade
 ```
 
+### Install VSCode
+```bash
+sudo snap install --classic code
+```
+
+### Install pip3
+```bash
+sudo apt install python3-pip
+```
+
 ### Install ROS2
 ```bash
 sudo apt install ros-humble-desktop
