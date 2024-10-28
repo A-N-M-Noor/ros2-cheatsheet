@@ -42,15 +42,22 @@ sudo apt upgrade
 sudo apt install ros-humble-desktop
 ```
 
+### Install Colcon
+```bash
+sudo apt-install python3-colcon-common-extensions
+```
+
 ### Add Path to Environment
-Open /.bashrc by using
+Open ` /.bashrc ` by using
 ```bash
 gedit ~/.bashrc
 ```
-Add this line at the end
+Add these line at the end
 ```bash
 source /opt/ros/humble/setup.bash
+source /usr/share/colcon_argcomplete/hook/colcon_argcomplete.bash
 ```
+Save & quit.
 
 ## Useful Commands
 View the **rqt graph**
@@ -61,7 +68,9 @@ or just
 ```bash
 rqt_graph
 ```
+
 ---
+
 List all the packages
 ```bash
 ros2 pkg list
@@ -73,3 +82,15 @@ ros2 pkg executables <package_name>
 ```bash
 ros2 pkg executables turtlesim
 ```
+
+---
+
+Run a node
+```bash
+ros2 run <pkg> <node>
+```
+```bash
+ros2 run turtlesim turtlesim_node
+```
+
+## Creating a ROS2 workspace
