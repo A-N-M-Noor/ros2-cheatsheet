@@ -69,6 +69,14 @@ source /usr/share/colcon_argcomplete/hook/colcon-argcomplete.bash
 ```
 Save & quit.
 
+### Install rosdep
+```bash
+sudo apt install python3-rosdep2
+```
+```bash
+rosdep update
+```
+
 ## Useful Commands
 View the **rqt graph**
 ```bash
