@@ -97,8 +97,8 @@ ros2 run turtlesim turtlesim_node
 ### Make the workspace
 Make a new directory, move into the directory, and create a src sub-directory.
 ```bash
-mkdir ros2_ws
-cd ros2_ws
+mkdir <ros2_ws>
+cd <ros2_ws>
 mkdir src
 ```
 
@@ -121,5 +121,5 @@ pip3 install setuptools==58.2.0
 
 Add the package to the ` .bashrc ` file
 ```bash
-source ~/ros2_ws/install/setup.bash
+source ~/<ros2_ws>/install/setup.bash
 ```
