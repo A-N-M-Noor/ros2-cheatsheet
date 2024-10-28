@@ -112,3 +112,15 @@ Add the package to the ` .bashrc ` file
 ```bash
 source ~/ros2_ws/install/setup.bash
 ```
+
+### Create the package
+Move into the ` src ` directory and run
+```bash
+ros2 pkg create <package_name> --build-type ament_python --dependencies rclpy
+```
+Build again (Must be from the workspace directory)
+
+If the build shows error, downgrade python setuptools to 58.2.0
+```bash
+pip3 install setuptools==58.2.0
+```
