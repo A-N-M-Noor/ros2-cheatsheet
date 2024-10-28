@@ -44,7 +44,7 @@ sudo apt install ros-humble-desktop
 
 ### Install Colcon
 ```bash
-sudo apt-install python3-colcon-common-extensions
+sudo apt install python3-colcon-common-extensions
 ```
 
 ### Add Path to Environment
