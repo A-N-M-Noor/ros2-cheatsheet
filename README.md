@@ -93,6 +93,12 @@ List all the packages
 ```bash
 ros2 pkg list
 ```
+
+List all the active nodes
+```bash
+ros2 node list
+```
+
 Check if a package exists
 ```bash
 ros2 pkg executables <package_name>
@@ -109,6 +115,30 @@ ros2 run <pkg> <node>
 ```
 ```bash
 ros2 run turtlesim turtlesim_node
+```
+
+View node info
+```bash
+ros2 node info <node>
+```
+
+---
+
+View topic info
+```bash
+ros2 topic info <topic>
+```
+
+Print topic in the terminal
+```bash
+ros2 topic echo <topic>
+```
+
+---
+
+View message interface
+```bash
+ros2 interface show <interface>
 ```
 
 ## Creating a ROS2 Package
