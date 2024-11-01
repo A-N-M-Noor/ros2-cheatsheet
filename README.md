@@ -85,7 +85,6 @@ rosdep update
 
 ## [Install f1tenth_gym_ros](https://github.com/f1tenth/f1tenth_gym_ros)
 
-### Install the dependencies
 ```bash
 git clone https://github.com/f1tenth/f1tenth_gym
 cd f1tenth_gym
@@ -93,13 +92,36 @@ pip3 install -e .
 ```
 
 ### Install the simulation
-Create a workspace in the home directory
+* Create a workspace in the home directory and clone the simulation
 ```bash
 cd ~
 mkdir -p sim_ws/src
 cd sim_ws/src
+git clone https://github.com/f1tenth/f1tenth_gym_ros
 ```
-Go to ` /config/sim.yaml ` and change the map path. It may be `"~/sim_ws/src/f1tenth_gym_ros/maps/levine"`
+* Go to ` /config/sim.yaml ` and change the map path. It may be `"~/sim_ws/src/f1tenth_gym_ros/maps/levine"`
+
+* Move to the ws directory and install dependencies.
+```bash
+rosdep install -i --from-path src --rosdistro humble -y
+```
+* Build the workspace
+```bash
+colcon build
+```
+* Add the local ` setup.bash ` to the .bashrc file.
+```bash
+gedit ~/.bashrc
+```
+Add the source at the end:
+```bash
+source ~/sim_ws/install/local_setup.bash
+```
+
+#### Launch the simulation
+```bash
+ros2 launch f1tenth_gym_ros gym_bridge_launch.py
+```
 
 ---
 
