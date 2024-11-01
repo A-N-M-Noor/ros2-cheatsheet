@@ -2,7 +2,22 @@
 
 ## [Installation](https://docs.ros.org/en/humble/Installation/Ubuntu-Install-Debs.html)
 
-### Check if you have UTF8
+### Install pip3
+```bash
+sudo apt install python3-pip
+```
+
+### Install git
+```bash
+sudo apt install git-all
+```
+
+---
+
+### Install ROS2 Humble, ROSDEP and Colcon
+
+#### Check if you have UTF8
+
 ```bash
 locale
 ```
@@ -15,7 +30,7 @@ export LANG=en_US.UTF-8
 ```
 Then verify again.
 
-### Setup the sources
+#### Setup the sources
 Enable **Ubuntu Universe Repository**
 ```bash
 sudo apt install software-properties-common
@@ -31,33 +46,23 @@ Add the repository to the source list
 echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/ros-archive-keyring.gpg] http://packages.ros.org/ros2/ubuntu $(. /etc/os-release && echo $UBUNTU_CODENAME) main" | sudo tee /etc/apt/sources.list.d/ros2.list > /dev/null
 ```
 
-### Update and upgrade
+#### Update and upgrade
 ```bash
 sudo apt update
 sudo apt upgrade
 ```
 
-### Install VSCode
-```bash
-sudo snap install --classic code
-```
-
-### Install pip3
-```bash
-sudo apt install python3-pip
-```
-
-### Install ROS2
+#### Install ROS2
 ```bash
 sudo apt install ros-humble-desktop
 ```
 
-### Install Colcon
+#### Install Colcon
 ```bash
 sudo apt install python3-colcon-common-extensions
 ```
 
-### Add Path to Environment
+#### Add Path to Environment
 Open ` .bashrc ` by using
 ```bash
 gedit ~/.bashrc
@@ -69,13 +74,43 @@ source /usr/share/colcon_argcomplete/hook/colcon-argcomplete.bash
 ```
 Save & quit.
 
-### Install rosdep
+#### Install rosdep
 ```bash
 sudo apt install python3-rosdep2
 ```
 ```bash
 rosdep update
 ```
+---
+
+## [Install f1tenth_gym_ros](https://github.com/f1tenth/f1tenth_gym_ros)
+
+### Install the dependencies
+```bash
+git clone https://github.com/f1tenth/f1tenth_gym
+cd f1tenth_gym
+pip3 install -e .
+```
+
+### Install the simulation
+Create a workspace in the home directory
+```bash
+cd ~
+mkdir -p sim_ws/src
+cd sim_ws/src
+```
+Go to ` /config/sim.yaml ` and change the map path. It may be `"~/sim_ws/src/f1tenth_gym_ros/maps/levine"`
+
+---
+
+### Install VSCode
+```bash
+sudo snap install --classic code
+```
+
+---
+---
+---
 
 ## Useful Commands
 View the **rqt graph**
